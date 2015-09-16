@@ -1,0 +1,166 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background: $bodyBG;
+  box-sizing: border-box;
+  color: $bodyTextColor;
+  font-family: $fontStack;
+  font-weight: 400;
+  * {
+    box-sizing: inherit;
+    color: inherit;
+    font-family: inherit;
+  }
+}
+
+a {
+  color: $accentColor;
+  text-decoration: none;
+  transition: color .25s;
+  &:hover {
+    color: lighten($accentColor, 10%);
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 0 1em 0;
+}
+
+nav {
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  transition: background .25s;
+  &.scrolled, &.open, &.open ul {
+    background: fade-out($bodyBG, .1);
+  }
+  &.open {
+    ul {
+      right: 0;
+      transition: background .25s;
+    }
+    .nav-item {
+      opacity: 1;
+      transition: opacity .25s;
+      visibility: visible;
+    }
+  }
+  .logo {
+    display: inline-block;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 3;
+    a {
+      color: $bodyTextColor;
+    }
+    &:before, &:after {
+      border-style: solid;
+      border-width: 0 0 10px 184px;
+      border-color: transparent transparent $accentColor transparent;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      width: 0;
+    }
+    &:before {
+      top: -.5rem;
+    }
+    &:after {
+      top: 2.4rem;
+      transform: rotateX(180deg);
+    }
+  }
+  .nav-button {
+    border-bottom: 2px solid $accentColor;
+    border-top: 2px solid $accentColor;
+    height: 15px;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    position: absolute;
+    display: inline-block;
+    @include large {
+      display: none;
+    }
+    &:before {
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      background: $accentColor;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+  }
+  ul {
+    position: absolute;
+    right: -9999px;
+    top: 100%;
+    width: 100%;
+    transition: background .25s, right 0s .25s;
+    @include large {
+      right: 0;
+      top: 0;
+      width: auto;
+    }
+  }
+  .nav-item {
+    display: block;
+    font-size: 1.2rem;
+    height: auto;
+    line-height: normal;
+    opacity: 0;
+    text-align: left;
+    transition: opacity .25s, visibility 0s .25s;
+    vertical-align: middle;
+    visibility: hidden;
+    @include large {
+      display: inline-block;
+      line-height: 75px;
+      opacity: 1;
+      visibility: visible;
+    }
+    a {
+      display: block;
+      padding: 1em;
+      @include large {
+        padding: 0 1em;
+      }
+    }
+  }
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 15vh 25px;
+  position: relative;
+  width: 100%;
+  &.blue {
+    background: $accentColor;
+    color: $bodyBG;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  @include medium {
+    width: 75%;
+  }
+}
+
+footer {
+  font-size: 1.8rem;
+  padding: 25px;
+}

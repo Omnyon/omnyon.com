@@ -1,0 +1,22 @@
+$accentColor: hsl(191, 69%, 42%);
+$bodyBG: hsl(191, 69%, 92%);
+$bodyTextColor: hsl(191, 69%, 15%);
+$fontStack: Lato, Arial, serif;
+
+@mixin small {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 800px) {
+    @content;
+  }
+}

@@ -1,0 +1,48 @@
+.contact {
+  ::placeholder {
+    color: white;
+  }
+  form {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    @include medium {
+      width: 60%;
+    }
+  }
+  button, input, select, textarea {
+    font-size: 1.5rem;
+  }
+  input, select, textarea {
+    display: block;
+    padding: 10px;
+  }
+  input, textarea {
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    width: 100%;
+    &:focus {
+      border-bottom: 2px solid $bodyTextColor;
+    }
+  }
+  button, input, textarea  {
+    margin-top: 25px;
+  }
+  button {
+    background: none;
+    border: 2px solid white;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 5px 20px;
+  }
+  select {
+    appearance: none;
+    background: none;
+    border: 2px solid $bodyBG;
+  }
+  textarea {
+    display: block;
+    resize: none;
+  }
+}
