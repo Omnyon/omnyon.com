@@ -1,11 +1,22 @@
 .openings {
   > .wrapper {
-    white-space: nowrap;
-    > .wrapper {
-      display: inline-block;
-      margin: 0;
-      width: 50%;
-      vertical-align: top;
+    .no-whitespace {
+      white-space: nowrap;
+      > .wrapper {
+        margin: 0;
+        width: 100%;
+        vertical-align: top;
+        + .wrapper {
+          margin-top: 25px;
+        }
+        @include medium {
+          display: inline-block;
+          width: 50%;
+          + .wrapper {
+            margin-top: 0;
+          }
+        }
+      }
     }
   }
   h2 {

@@ -1,3 +1,7 @@
+html, body {
+  width: 100%;
+}
+
 html {
   font-size: 16px;
 }
@@ -143,9 +147,12 @@ nav {
 }
 
 section {
-  padding: 15vh 25px;
+  padding: 15vh 0;
   position: relative;
   width: 100%;
+  @include medium {
+    padding: 15vh 25px;
+  }
   &.blue {
     background: $accentColor;
     color: $bodyBG;
