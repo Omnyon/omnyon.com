@@ -40,6 +40,10 @@
     appearance: none;
     background: none;
     border: 2px solid $bodyBG;
+    width: 100%;
+    @include medium {
+      width: auto;
+    }
   }
   textarea {
     display: block;
