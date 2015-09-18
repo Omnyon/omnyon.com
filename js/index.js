@@ -13,6 +13,8 @@
   [...document.querySelectorAll('[data-scroll-to]')].forEach(function forEachDataScrollTo(el) {
     el.addEventListener('click', function onClick(ev) {
       ev.preventDefault();
+      window.location.hash = ev.target.getAttribute('href').substring(1);
+
       let topY = document.querySelector(this.getAttribute('data-scroll-to')).getBoundingClientRect().top + window.scrollY - navHeight;
 
       nav.classList.remove('open');

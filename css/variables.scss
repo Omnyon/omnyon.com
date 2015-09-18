@@ -16,7 +16,13 @@ $fontStack: Lato, Arial, serif;
 }
 
 @mixin large {
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 850px) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media only screen and (min-width: 1000px) {
     @content;
   }
 }

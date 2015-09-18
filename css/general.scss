@@ -59,7 +59,7 @@ nav {
     }
     &:before, &:after {
       border-style: solid;
-      border-width: 0 0 10px 184px;
+      border-width: 0 0 10px 183px;
       border-color: transparent transparent $accentColor transparent;
       content: '';
       display: block;
@@ -130,8 +130,10 @@ nav {
     a {
       display: block;
       padding: .5em 1em;
+      text-align: center;
       @include large {
-        padding: 0 1em;
+        padding: 0 .5em;
+        text-align: left;
       }
     }
   }
@@ -146,8 +148,8 @@ section {
   padding: 15vh 25px;
   position: relative;
   width: 100%;
-  &.blue {
-    background: $accentColor;
+  &:nth-child(odd) {
+    background-color: $accentColor;
     color: $bodyBG;
   }
 }
@@ -161,6 +163,6 @@ section {
 }
 
 footer {
-  font-size: 1.8rem;
-  padding: 25px;
+  font-size: 1.2rem;
+  padding: 1em;
 }
