@@ -1,6 +1,4 @@
 .values {
-  margin: 0 auto;
-  width: 80%;
   li {
     display: inline-block;
     width: 100%;
@@ -9,6 +7,12 @@
     @include large {
       padding: 0 20px;
       width: 33%;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
     }
     .value-img {
       background: $accentColor;

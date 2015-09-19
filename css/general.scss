@@ -19,6 +19,12 @@ a {
   color: $accentColor;
   text-decoration: none;
   transition: color .25s;
+  [name] {
+    display: block;
+    position: relative;
+    top: -72px;
+    visibility: hidden;
+  }
   &:hover {
     color: lighten($accentColor, 10%);
   }
@@ -30,13 +36,12 @@ h1 {
 }
 
 nav {
-  padding: 1rem 0;
   position: fixed;
   width: 100%;
   z-index: 2;
   transition: background .25s;
   &.scrolled, &.open, &.open ul {
-    background: fade-out($bodyBG, .1);
+    background: fade-out($bodyBG, .02);
   }
   &.open {
     ul {
@@ -54,6 +59,9 @@ nav {
     font-size: 2.5rem;
     position: relative;
     z-index: 3;
+    @include large {
+      float: left;
+    }
     a {
       color: $bodyTextColor;
     }
@@ -73,6 +81,19 @@ nav {
     &:after {
       top: 2.4rem;
       transform: rotateX(180deg);
+    }
+  }
+  .wrapper {
+    margin: auto;
+    padding: 1em;
+    position: relative;
+    width: 100%;
+    &:after {
+      clear: both;
+      content: '';
+      display: table;
+      overflow: hidden;
+      width: 100%;
     }
   }
   .nav-button {
@@ -106,9 +127,11 @@ nav {
     width: 100%;
     transition: background .25s, right 0s .25s;
     @include large {
-      right: 0;
-      top: 0;
+      float: right;
+      position: static;
+      right: auto;
       width: auto;
+      top: auto;
     }
   }
   .nav-item {
@@ -123,7 +146,7 @@ nav {
     visibility: hidden;
     @include large {
       display: inline-block;
-      line-height: 75px;
+      line-height: 2em;
       opacity: 1;
       visibility: visible;
     }
@@ -148,7 +171,7 @@ section {
   padding: 15vh 25px;
   position: relative;
   width: 100%;
-  &:nth-child(odd) {
+  &:nth-of-type(odd) {
     background-color: $accentColor;
     color: $bodyBG;
   }

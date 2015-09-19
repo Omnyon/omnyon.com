@@ -7,56 +7,62 @@
 </head>
 <body>
   <nav>
-    <div class="logo">
-      <a href="/">OMNYON</a>
+    <div class="wrapper">
+      <div class="logo">
+        <a href="/">OMNYON</a>
+      </div>
+      <a href="#" class="nav-button"></a>
+      <ul>
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#values" data-scroll-to=".js-values">Values</a>
+        </li>
+        <li class="nav-item">
+          <a href="#benefits" data-scroll-to=".js-benefits">Benfits</a>
+        </li>
+        <li class="nav-item">
+          <a href="#openings" data-scroll-to=".js-openings">Openings</a>
+        </li>
+        <li class="nav-item">
+          <a href="#events" data-scroll-to=".js-events">Events</a>
+        </li>
+        <li class="nav-item">
+          <a href="#expertise" data-scroll-to=".js-expertise">Expertise</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" data-scroll-to=".js-contact">Contact Us</a>
+        </li>
+      </ul>
     </div>
-    <a href="#" class="nav-button"></a>
-    <ul>
-      <li class="nav-item">
-        <a href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#values" data-scroll-to=".js-values">Values</a>
-      </li>
-      <li class="nav-item">
-        <a href="#benefits" data-scroll-to=".js-benefits">Benfits</a>
-      </li>
-      <li class="nav-item">
-        <a href="#openings" data-scroll-to=".js-openings">Openings</a>
-      </li>
-      <li class="nav-item">
-        <a href="#events" data-scroll-to=".js-events">Events</a>
-      </li>
-      <li class="nav-item">
-        <a href="#expertise" data-scroll-to=".js-expertise">Expertise</a>
-      </li>
-      <li class="nav-item">
-        <a href="#contact" data-scroll-to=".js-contact">Contact Us</a>
-      </li>
-    </ul>
   </nav>
   <div class="sections">
     <section class="hero">
       <p class="hero-text">A small business focused software/system engineering and IT support.</p>
     </section>
     <section class="js-values">
-      <ul class="values">
-        <li>
-          <span class="value-img fa fa-users"></span>
-          <p class="value-desc">An employee centric philosophy is our drive to empower employees to be filled with passion.</p>
-        </li>
-        <li>
-          <span class="value-img fa fa-flask"></span>
-          <p class="value-desc">Innovation and efficiency are our focus as we provide domain expertise</p>
-        </li>
-        <li>
-          <span class="value-img fa fa-globe"></span>
-          <p class="value-desc">Mission and providing value is our philosophy. </p>
-        </li>
-      </ul>
+      <div class="wrapper">
+        <ul class="values">
+          <li>
+            <span class="value-img fa fa-users"></span>
+            <p class="value-desc">An employee centric philosophy is our drive to empower employees to be filled with passion.</p>
+          </li>
+          <li>
+            <span class="value-img fa fa-flask"></span>
+            <p class="value-desc">Innovation and efficiency are our focus as we provide domain expertise</p>
+          </li>
+          <li>
+            <span class="value-img fa fa-globe"></span>
+            <p class="value-desc">Mission and providing value is our philosophy. </p>
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="benefits js-benefits">
-      <h1>Benefits</h1>
+      <div class="wrapper">
+        <h1>Benefits</h1>
+      </div>
     </section>
     <section class="openings js-openings">
       <div class="wrapper">
@@ -92,23 +98,27 @@
       </div>
     </section>
     <section class="expertise js-expertise">
-      <h1>Expertise</h1>
+      <div class="wrapper">
+        <h1>Expertise</h1>
+      </div>
     </section>
     <section class="contact js-contact">
-      <form>
-        <h1>We would love to hear from you!</h1>
-        <select name="to">
-          <option>Staffing</option>
-          <option>HR</option>
-          <option>Contracts</option>
-          <option>Business Development</option>
-          <option>General</option>
-        </select>
-        <input name="subject" placeholder="Subject">
-        <input name="position" placeholder="Position">
-        <textarea name="message" placeholder="Message"></textarea>
-        <button type="submit">Send</button>
-      </form>
+      <div class="wrapper">
+        <form>
+          <h1>We would love to hear from you!</h1>
+          <select name="to">
+            <option>Staffing</option>
+            <option>HR</option>
+            <option>Contracts</option>
+            <option>Business Development</option>
+            <option>General</option>
+          </select>
+          <input name="subject" placeholder="Subject">
+          <input name="position" placeholder="Position">
+          <textarea name="message" placeholder="Message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </section>
   </div>
   <footer>

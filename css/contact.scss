@@ -4,11 +4,7 @@
   }
   form {
     display: block;
-    margin: 0 auto;
     width: 100%;
-    @include medium {
-      width: 60%;
-    }
   }
   button, input, select, textarea {
     font-size: 1.5rem;
