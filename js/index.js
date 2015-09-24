@@ -14,6 +14,8 @@
         };
     }()),
     init() {
+      App.nav = App.QS('nav');
+      App.navHeight = App.nav.clientHeight;
       if (App.getHash()) {
         App.requestAnimationFrame(function() {
           window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + App.getHash())));
@@ -25,8 +27,6 @@
       App.attachListeners();
     },
     attachListeners() {
-      App.nav = App.QS('nav');
-      App.navHeight = App.nav.clientHeight;
       [...App.QSA('[data-scroll-to]')].forEach(function(element) {
         element.addEventListener('click', App.handleScrollToClick);
       });
