@@ -36,6 +36,18 @@
         ev.preventDefault();
         App.nav.classList.toggle('open');
       });
+      App.QS('.select-arrow').addEventListener('click', function(ev) {
+        ev.preventDefault();
+        let node = ev.target.parentNode.querySelector('select');
+        let mdEvent = document.createEvent('MouseEvents');
+
+        if (!node) {
+          return;
+        }
+
+        mdEvent.initMouseEvent('mousedown', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        node.dispatchEvent(mdEvent);
+      });
       window.addEventListener('scroll', App.handleScroll);
       window.addEventListener('resize', App.debounce(App.handleResize), 1000);
       window.addEventListener('beforeunload', App.handleBeforeUnload);
@@ -99,7 +111,6 @@
       window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + getHash())));
     },
     getTitleFromHash(hash) {
-      console.log(!hash);
       if (!hash) {
         return 'Home';
       }

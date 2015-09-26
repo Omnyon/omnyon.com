@@ -46,4 +46,15 @@
     display: block;
     resize: none;
   }
+  .select-wrapper {
+    display: inline-block;
+    position: relative;
+    .select-arrow {
+      font-size: 2rem;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
