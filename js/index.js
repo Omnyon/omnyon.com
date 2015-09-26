@@ -18,6 +18,7 @@
       App.navHeight = App.nav.clientHeight;
       App.getEvents();
       if (App.getHash()) {
+        App.setTitle(App.getTitleFromHash(App.getHash()));
         App.requestAnimationFrame(function() {
           window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + App.getHash())));
           App.handleScroll();
@@ -81,7 +82,7 @@
     handleScrollToClick(ev) {
       ev.preventDefault();
       let hash = ev.target.getAttribute('href');
-      let title = hash.charAt(1).toUpperCase() + hash.substring(2);
+      let title = App.getTitleFromHash(hash);
 
       App.setTitle(title);
       App.setHash(hash);
@@ -96,6 +97,10 @@
     },
     handleBeforeUnload() {
       window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + getHash())));
+    },
+    getTitleFromHash(hash) {
+      let index = hash.indexOf('#');
+      return hash.charAt(index + 1).toUpperCase() + hash.substring(index + 2);
     },
     debounce(func, wait, immediate) {
       let timeout;
