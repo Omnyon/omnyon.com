@@ -65,7 +65,7 @@
       return window.location.hash.substring(1);
     },
     setHash(hash) {
-      window.location.hash = hash.substring(1);
+      window.history.pushState({}, '', hash || '/');
     },
     getTopOfElement(element) {
       return element.getBoundingClientRect().top + window.scrollY - App.navHeight;
@@ -99,7 +99,13 @@
       window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + getHash())));
     },
     getTitleFromHash(hash) {
+      console.log(!hash);
+      if (!hash) {
+        return 'Home';
+      }
+
       let index = hash.indexOf('#');
+
       return hash.charAt(index + 1).toUpperCase() + hash.substring(index + 2);
     },
     debounce(func, wait, immediate) {
