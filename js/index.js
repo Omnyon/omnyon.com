@@ -16,6 +16,7 @@
     init() {
       App.nav = App.QS('nav');
       App.navHeight = App.nav.clientHeight;
+      App.getEvents();
       if (App.getHash()) {
         App.requestAnimationFrame(function() {
           window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + App.getHash())));
@@ -38,6 +39,15 @@
       window.addEventListener('resize', App.debounce(App.handleResize), 1000);
       window.addEventListener('beforeunload', App.handleBeforeUnload);
     },
+    getEvents() {
+      fetch('events.json').then((res) => res.json()).then(function(json) {
+        let html = json.events.map(function(event) {
+          return `<li>${event.date} ${event.time} @ <a href="${event.uri}">${event.location}</a></li>`;
+        }).join('');
+
+        App.QS('.js-events ul').innerHTML = html;
+      });
+    },
     handleScroll() {
       App.changeHeaderColor(window.scrollY > 0);
     },
@@ -46,6 +56,9 @@
         return;
       }
       App.nav.classList[isScrolled ? 'add' : 'remove']('scrolled');
+    },
+    setTitle(title) {
+      document.title = 'Omnyon | ' + title;
     },
     getHash() {
       return window.location.hash.substring(1);
@@ -67,7 +80,11 @@
     },
     handleScrollToClick(ev) {
       ev.preventDefault();
-      App.setHash(ev.target.getAttribute('href'));
+      let hash = ev.target.getAttribute('href');
+      let title = hash.charAt(1).toUpperCase() + hash.substring(2);
+
+      App.setTitle(title);
+      App.setHash(hash);
       App.nav.classList.remove('open');
       App.scrollToElement(ev.target.getAttribute('data-scroll-to'), 1);
     },
