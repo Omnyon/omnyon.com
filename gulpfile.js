@@ -10,17 +10,17 @@ var fs = require('fs');
 
 gulp.task('babel', compileBabel);
 gulp.task('scss', compileScss);
-gulp.task('default', compileAll);
+gulp.task('default', ['babel', 'scss']);
 gulp.task('watch', watch);
 
 function compileBabel() {
   console.log('Transpiling JS');
   browserify('js/index.js', {debug: true})
     .transform(babelify.configure({stage: 0}))
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .bundle()
     .on('error', function(err) { console.log('Error : ' + err.message); })
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
     .pipe(fs.createWriteStream('dist/bundle.js'));
 }
 
@@ -30,11 +30,6 @@ function compileScss() {
     .pipe(scss({outputStyle: 'compressed'}).on('error', scss.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest('dist'));
-}
-
-function compileAll() {
-  compileBabel();
-  compileScss();
 }
 
 function watch() {
