@@ -9,6 +9,9 @@
     "Power3": false,
     "TweenMax": false
   },
+  "ecmaFeatures": {
+    "modules": true
+  },
   "rules": {
     "strict": [2, "function"],
     "eol-last": 0,
@@ -61,7 +64,6 @@
     "computed-property-spacing": [2, "never"],
     "consistent-this": [0, "self"],
     "func-names": 0,
-    "func-style": [2, "expression"],
     "indent": [2, 2, {"SwitchCase": 1}],
     "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
     "max-nested-callbacks": [2, 3],

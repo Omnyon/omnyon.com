@@ -1,10 +1,12 @@
 /* eslint func-style: [2, "declaration"]*/
+
 var gulp = require('gulp');
-var babel = require('gulp-babel');
-var uglify = require('gulp-uglify');
 var scss = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var fs = require('fs');
 
 gulp.task('babel', compileBabel);
 gulp.task('scss', compileScss);
@@ -12,18 +14,17 @@ gulp.task('default', compileAll);
 gulp.task('watch', watch);
 
 function compileBabel() {
-  'use strict';
   console.log('Transpiling JS');
-  return gulp.src('js/**/*.js')
+  browserify('js/index.js', {debug: true})
+    .transform(babelify.configure({stage: 0}))
     .pipe(sourcemaps.init())
-    .pipe(babel({stage: 0}))
-    // .pipe(uglify())
+    .bundle()
+    .on('error', function(err) { console.log('Error : ' + err.message); })
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist'));
+    .pipe(fs.createWriteStream('dist/bundle.js'));
 }
 
 function compileScss() {
-  'use strict';
   console.log('Transpiling CSS');
   return gulp.src('css/index.scss')
     .pipe(scss({outputStyle: 'compressed'}).on('error', scss.logError))
@@ -32,13 +33,11 @@ function compileScss() {
 }
 
 function compileAll() {
-  'use strict';
   compileBabel();
   compileScss();
 }
 
 function watch() {
-  'use strict';
   gulp.watch('js/**/*.js', ['babel']);
   gulp.watch('css/**/*.scss', ['scss']);
 }

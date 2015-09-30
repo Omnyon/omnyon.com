@@ -1,4 +1,8 @@
-(function() {
+import {init} from './init';
+
+init();
+
+/* (function() {
   'use strict';
   let App = {
     QS: document::document.querySelector,
@@ -14,11 +18,7 @@
         };
     }()),
     init() {
-      App.nav = App.QS('nav');
-      App.navHeight = App.nav.clientHeight;
-      App.getEvents();
       if (App.getHash()) {
-        App.setTitle(App.getTitleFromHash(App.getHash()));
         App.requestAnimationFrame(function() {
           window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + App.getHash())));
           App.handleScroll();
@@ -29,6 +29,8 @@
       App.attachListeners();
     },
     attachListeners() {
+      App.nav = App.QS('nav');
+      App.navHeight = App.nav.clientHeight;
       [...App.QSA('[data-scroll-to]')].forEach(function(element) {
         element.addEventListener('click', App.handleScrollToClick);
       });
@@ -36,30 +38,9 @@
         ev.preventDefault();
         App.nav.classList.toggle('open');
       });
-      App.QS('.select-arrow').addEventListener('click', function(ev) {
-        ev.preventDefault();
-        let node = ev.target.parentNode.querySelector('select');
-        let mdEvent = document.createEvent('MouseEvents');
-
-        if (!node) {
-          return;
-        }
-
-        mdEvent.initMouseEvent('mousedown', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        node.dispatchEvent(mdEvent);
-      });
       window.addEventListener('scroll', App.handleScroll);
       window.addEventListener('resize', App.debounce(App.handleResize), 1000);
       window.addEventListener('beforeunload', App.handleBeforeUnload);
-    },
-    getEvents() {
-      fetch('events.json').then((res) => res.json()).then(function(json) {
-        let html = json.events.map(function(event) {
-          return `<li>${event.date} ${event.time} @ <a href="${event.uri}">${event.location}</a></li>`;
-        }).join('');
-
-        App.QS('.js-events ul').innerHTML = html;
-      });
     },
     handleScroll() {
       App.changeHeaderColor(window.scrollY > 0);
@@ -70,14 +51,11 @@
       }
       App.nav.classList[isScrolled ? 'add' : 'remove']('scrolled');
     },
-    setTitle(title) {
-      document.title = 'Omnyon | ' + title;
-    },
     getHash() {
       return window.location.hash.substring(1);
     },
     setHash(hash) {
-      window.history.pushState({}, '', hash || '/');
+      window.location.hash = hash.substring(1);
     },
     getTopOfElement(element) {
       return element.getBoundingClientRect().top + window.scrollY - App.navHeight;
@@ -93,11 +71,7 @@
     },
     handleScrollToClick(ev) {
       ev.preventDefault();
-      let hash = ev.target.getAttribute('href');
-      let title = App.getTitleFromHash(hash);
-
-      App.setTitle(title);
-      App.setHash(hash);
+      App.setHash(ev.target.getAttribute('href'));
       App.nav.classList.remove('open');
       App.scrollToElement(ev.target.getAttribute('data-scroll-to'), 1);
     },
@@ -109,15 +83,6 @@
     },
     handleBeforeUnload() {
       window.scrollTo(0, App.getTopOfElement(App.QS('.js-' + getHash())));
-    },
-    getTitleFromHash(hash) {
-      if (!hash) {
-        return 'Home';
-      }
-
-      let index = hash.indexOf('#');
-
-      return hash.charAt(index + 1).toUpperCase() + hash.substring(index + 2);
     },
     debounce(func, wait, immediate) {
       let timeout;
@@ -143,4 +108,4 @@
   };
 
   App.init();
-}());
+}());*/
