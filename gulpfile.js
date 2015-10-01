@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var scss = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserify = require('browserify');
 var babelify = require('babelify');
