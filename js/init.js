@@ -1,5 +1,4 @@
 import {QS} from './qs';
-import {drawMasks} from './slants';
 import {getEvents, generateEventsHTML} from './getEvents';
 import {getTitleFromPath, getPath} from './path';
 import {setTitle, requestAnimationFrame} from './utils';
@@ -8,7 +7,6 @@ import {handleScroll} from './handlers';
 import {attachListeners} from './attachListeners';
 
 export function init() {
-  drawMasks();
   getEvents().then(generateEventsHTML).then(function(html) {
     QS('.js-events ul').innerHTML = html;
   });

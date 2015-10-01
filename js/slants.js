@@ -65,8 +65,8 @@ function drawTopMask(mask, section) {
 function drawBottomMask(mask, section) {
   let [context, width] = setupContext(mask, section);
 
-  context.moveTo(0, MASK_HEIGHT);
-  context.lineTo(width, MASK_HEIGHT);
+  context.moveTo(width, MASK_HEIGHT);
   context.lineTo(width, 0);
+  context.lineTo(0, MASK_HEIGHT);
   context.fill();
 }

@@ -1,5 +1,4 @@
 import {QS} from './qs';
-import {drawMasks} from './slants';
 import {setTitle} from './utils';
 import {getTitleFromPath, setPath} from './path';
 import {getTopOfElement, scrollToElement} from './element';
@@ -44,7 +43,6 @@ export function handleSelectArrowClick(ev) {
 }
 
 export function handleResize() {
-  drawMasks();
   if (window.innerWidth < 850) {
     return;
   }
