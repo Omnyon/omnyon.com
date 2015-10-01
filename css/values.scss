@@ -10,8 +10,15 @@
       }
     }
     @include large {
-      padding: 0 .5em;
-      width: 33%;
+      width: 32.9%;
+      .value-img {
+        transform: scale(1.2);
+      }
+      &:first-child, &:last-child {
+        .value-img {
+          transform: scale(.9);
+        }
+      }
       &:first-child {
         padding-left: 0;
       }
@@ -27,7 +34,7 @@
       font-size: 8rem;
       height: 1.5em;
       line-height: 1.5em;
-      margin: 0 0 .25em 0;
+      margin: 0 0 .5em 0;
       width: 1.5em;
       .icon {
         &:before {
@@ -41,7 +48,6 @@
       text-align: center;
       @include large {
         margin-bottom: 0;
-        text-align: left;
       }
     }
   }

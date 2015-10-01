@@ -1,5 +1,11 @@
 html {
   font-size: 16px;
+  @include large {
+    font-size: 14px;
+  }
+  @include x-large {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -73,6 +79,7 @@ nav {
       display: block;
       height: 0;
       position: absolute;
+      transform: scale(.9999);
       width: 0;
     }
     &:before {
@@ -177,25 +184,20 @@ section {
     background-image: linear-gradient(145deg, $accentColor, hsl(176, 69%, 42%));
     color: $bodyBG;
   }
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -42px;
-    width: 100%;
-    height: 84px;
+  &:before, &:after {
     background: $bodyBG;
-    transform: skewY(-2.5deg);
+    content: '';
+    height: 84px;
+    left: 0;
+    position: absolute;
+    transform: skewY(-1deg);
+    width: 100%;
+  }
+  &:before {
+    top: -42px;
   }
   &:after {
-    content: '';
-    position: absolute;
-    left: 0;
     bottom: -42px;
-    width: 100%;
-    height: 84px;
-    background: $bodyBG;
-    transform: skewY(-2.5deg);
   }
   > .section-mask {
     bottom: 0;
