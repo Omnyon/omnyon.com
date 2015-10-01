@@ -1,7 +1,7 @@
 import {QSA} from './qs';
 
 let masks = [];
-const MASK_HEIGHT = 46;
+const MASK_HEIGHT = 45;
 
 export function drawMasks() {
   if (masks.length === 0) {

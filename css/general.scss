@@ -177,12 +177,12 @@ section {
     color: $bodyBG;
   }
   > .section-mask {
-    bottom: -1px;
+    bottom: 0;
     left: 0;
     position: absolute;
     &.reversed {
       bottom: auto;
-      top: -1px;
+      top: 0;
     }
   }
 }
