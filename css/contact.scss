@@ -37,6 +37,8 @@
     background: none;
     border: none;
     border-bottom: 2px solid $bodyBG;
+    position: relative;
+    z-index: 1;
     width: 100%;
     @include medium {
       width: auto;
@@ -55,6 +57,7 @@
       right: 0;
       top: 50%;
       transform: translate(-50%, -50%);
+      z-index: 0;
     }
   }
 }

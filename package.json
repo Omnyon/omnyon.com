@@ -25,6 +25,7 @@
   "browser": {
     "fetch": "./node_modules/whatwg-fetch/fetch.js",
     "greensock": "./node_modules/gsap/src/uncompressed/TweenMax.js",
-    "greensock-scrollto": "./node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js"
+    "greensock-scrollto": "./node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js",
+    "tether-select": "./node_modules/tether-select/src/js/select.js"
   }
 }

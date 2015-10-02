@@ -29,19 +29,6 @@ export function handleToggleNavClick(ev) {
   QS('nav').classList.toggle('open');
 }
 
-export function handleSelectArrowClick(ev) {
-  ev.preventDefault();
-  let node = ev.target.parentNode.querySelector('select');
-  let mdEvent = document.createEvent('MouseEvents');
-
-  if (!node) {
-    return;
-  }
-
-  mdEvent.initMouseEvent('mousedown', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-  node.dispatchEvent(mdEvent);
-}
-
 export function handleResize() {
   if (window.innerWidth < 850) {
     return;
