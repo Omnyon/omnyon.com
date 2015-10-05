@@ -88,7 +88,7 @@ nav {
     }
     &:after {
       top: 2.4rem;
-      transform: rotateX(180deg);
+      transform: rotateX(180deg) scale(.9999);
     }
   }
   .wrapper {
