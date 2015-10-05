@@ -1,23 +1,24 @@
-import {QS} from './qs';
-import {getEvents, generateEventsHTML} from './getEvents';
-import {getTitleFromPath, getPath} from './path';
-import {setTitle, requestAnimationFrame} from './utils';
-import {getTopOfElement, scrollToElement} from './element';
-import {handleScroll} from './handlers';
-import {attachListeners} from './attachListeners';
+import {QS} from './qs'
+import {getEvents, generateEventsHTML} from './getEvents'
+import {getTitleFromPath, getPath} from './path'
+import {setTitle, requestAnimationFrame} from './utils'
+import {getTopOfElement, showHideFileInput} from './element'
+import {handleScroll} from './handlers'
+import {attachListeners} from './attachListeners'
 
-export function init() {
-  getEvents().then(generateEventsHTML).then(function(html) {
-    QS('.js-events ul').innerHTML = html;
-  });
+export function init () {
+  showHideFileInput(QS('.js-contact select').value !== 'Staffing')
+  getEvents().then(generateEventsHTML).then(function (html) {
+    QS('.js-events ul').innerHTML = html
+  })
   if (getPath()) {
-    setTitle(getTitleFromPath(getPath()));
+    setTitle(getTitleFromPath(getPath()))
     requestAnimationFrame(() => {
-      window.scrollTo(0, getTopOfElement(QS('.js-' + getPath())));
-      handleScroll();
-    });
+      window.scrollTo(0, getTopOfElement(QS('.js-' + getPath())))
+      handleScroll()
+    })
   } else {
-    handleScroll();
+    handleScroll()
   }
-  attachListeners();
+  attachListeners()
 }

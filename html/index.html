@@ -36,7 +36,7 @@
   </nav>
   <div class="sections">
     <section class="hero js-hero">
-      <p class="hero-text">A small business focused software/system engineering and IT support.</p>
+      <p class="hero-text">A small business focused on software/system engineering and IT support.</p>
     </section>
     <section class="js-values">
       <div class="wrapper">
@@ -128,7 +128,7 @@
         <form>
           <h1>We would love to hear from you!</h1>
           <div class="select-wrapper">
-            <select name="to">
+            <select name="to" required>
               <option>Staffing</option>
               <option>HR</option>
               <option>Contracts</option>
@@ -137,10 +137,15 @@
             </select>
             <span class="select-arrow ion-ios-arrow-down"></span>
           </div>
-          <input name="subject" placeholder="Subject">
+          <label class="file-input-wrapper hidden">
+            <input type="file">
+            <span class="file-input">Resume</span>
+          </label>
+          <input type="email" name="email" placeholder="Email*" required>
+          <input name="subject" placeholder="Subject*" required>
           <input name="position" placeholder="Position">
-          <textarea name="message" placeholder="Message"></textarea>
-          <button type="submit">Send</button>
+          <textarea name="message" placeholder="Talk to us!*" required></textarea>
+          <button type="submit" disabled>Send</button>
         </form>
       </div>
     </section>

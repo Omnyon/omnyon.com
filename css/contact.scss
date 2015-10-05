@@ -6,15 +6,19 @@
     display: block;
     width: 100%;
   }
-  button, input, select, textarea {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px $accentColor inset;
+    -webkit-text-fill-color: $bodyBG;
+  }
+  button, input, select, textarea, .file-input {
     font-size: 1.5rem;
   }
-  input, select, textarea {
+  input, select, textarea, .file-input {
     border-radius: 0;
     display: block;
     padding: 10px;
   }
-  input, textarea {
+  input, textarea, .file-input {
     background: none;
     border: none;
     border-bottom: 2px solid white;
@@ -23,7 +27,7 @@
       border-bottom: 2px solid $bodyTextColor;
     }
   }
-  button, input, textarea  {
+  button, input, textarea, .file-input  {
     margin-top: 25px;
   }
   button {
@@ -31,6 +35,10 @@
     border: 2px solid white;
     cursor: pointer;
     padding: 5px 20px;
+    &[disabled] {
+      cursor: default;
+      opacity: .4;
+    }
   }
   select {
     appearance: none;
@@ -47,6 +55,19 @@
   textarea {
     display: block;
     resize: none;
+  }
+  .file-input-wrapper {
+    &.hidden {
+      display: none;
+    }
+    input {
+      border: none;
+      height: 0;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      width: 0;
+    }
   }
   .select-wrapper {
     display: inline-block;
