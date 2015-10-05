@@ -13,11 +13,12 @@ body {
   box-sizing: border-box;
   color: $bodyTextColor;
   font-family: $fontStack;
-  font-weight: 400;
+  font-weight: 200;
   * {
     box-sizing: inherit;
     color: inherit;
     font-family: inherit;
+    font-weight: inherit;
   }
 }
 
@@ -104,8 +105,8 @@ nav {
     }
   }
   .nav-button {
-    border-bottom: 2px solid $accentColor;
-    border-top: 2px solid $accentColor;
+    border-bottom: 1px solid $accentColor;
+    border-top: 1px solid $accentColor;
     height: 15px;
     right: 25px;
     top: 50%;
@@ -118,7 +119,7 @@ nav {
     }
     &:before {
       content: '';
-      height: 2px;
+      height: 1px;
       left: 0;
       position: absolute;
       top: 50%;
