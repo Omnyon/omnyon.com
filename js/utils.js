@@ -1,5 +1,3 @@
-import {QSA} from './qs'
-
 let requestAnimFrame = (function () {
   return window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -9,48 +7,63 @@ let requestAnimFrame = (function () {
     }
 }())
 
+export const QS = document::document.querySelector
+export const QSA = document::document.querySelectorAll
+
 export const requestAnimationFrame = window::requestAnimFrame
-
-export function matchesSelector (el, selector) {
-  let p = Element.prototype
-  let f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function (s) {
-    return [].indexOf.call(QSA(s), this) !== -1
-  }
-
-  return f.call(el, selector)
-}
-
-export function delegate (fn, selector) {
-  return function (event) {
-    if (!matchesSelector(event.target, selector)) {
-      return
-    }
-    fn.call(event.target, event)
-  }
-}
-
-export function debounce (func, wait, immediate) {
-  let timeout
-
-  return function debounced () {
-    let context = this
-    let args = arguments
-    let later = function later () {
-      timeout = null
-      if (!immediate) {
-        func.apply(context, args)
-      }
-    }
-    let callNow = immediate && !timeout
-
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-    if (callNow) {
-      func.apply(context, args)
-    }
-  }
-}
 
 export function setTitle (title) {
   document.title = 'Omnyon | ' + title
+}
+
+export const scrollToElementForPath = (function () {
+  let timer, start, factor
+
+  return function (path, duration) {
+    const slashIndex = path.includes('/') ? 1 : 0
+    const selector = '.js-' + (path === '/' ? 'hero' : path.substring(slashIndex))
+    let target = QS(selector).offsetTop - QS('nav').clientHeight
+    let offset = window.pageYOffset
+    let delta = target - window.pageYOffset
+    duration = duration || 1000
+    start = Date.now()
+    factor = 0
+
+    console.log(target, duration)
+
+    if (timer) {
+      clearInterval(timer)
+    }
+
+    function step () {
+      let y
+      factor = (Date.now() - start) / duration
+      if (factor >= 1) {
+        clearInterval(timer)
+        factor = 1
+      }
+      y = factor * delta + offset
+      window.scrollBy(0, y - window.pageYOffset)
+    }
+
+    timer = setInterval(step, 2)
+    return timer
+  }
+}())
+
+export function getPath () {
+  return window.location.pathname.substring(1)
+}
+
+export function setPath (path) {
+  window.history.pushState({}, '', path || '/')
+}
+
+export function getTitleFromPath (path) {
+  let index = path.indexOf('/')
+
+  if (path === '/') {
+    return 'Home'
+  }
+  return path.charAt(index + 1).toUpperCase() + path.substring(index + 2)
 }

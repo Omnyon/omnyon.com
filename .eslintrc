@@ -9,11 +9,16 @@
     "TweenLite": false
   },
   "ecmaFeatures": {
-    "modules": true
+    "modules": true,
+    "jsx": true
   },
   "extends": "standard",
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "no-trailing-spaces": [2, {"skipBlankLines": true}],
-    "eol-last": 0
+    "eol-last": 0,
+    "react/jsx-uses-react": 2
   }
 }

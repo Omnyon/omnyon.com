@@ -1,0 +1,8 @@
+language: node_js
+install: true
+node_js:
+  - "iojs"
+before_script:
+  - "npm -g install eslint eslint-config-standard eslint-plugin-react babel-eslint"
+script:
+  - "eslint `find js/ -type f -name '*.js*'`"
