@@ -1,0 +1,556 @@
+/* ==== Google font ==== */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+/* ==== overwrite bootstrap standard ==== */
+/*@import url('animate.css');*/
+
+/* BREAKPOINTS */
+/*
+@media only screen and (min-width : 320px)
+@media only screen and (min-width : 480px)
+@media only screen and (min-width : 768px)
+@media only screen and (min-width : 992px)
+@media only screen and (min-width : 1200px)
+*/
+
+/* GLOBAL */
+
+body {
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6em;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 50px 0 0 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  outline: none;
+  color: #219ab5;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #21b5ab;
+}
+
+::selection {
+  background: #219ab5;
+  color: white;
+}
+
+::placeholder {
+  color: #909090;
+}
+
+footer,
+section {
+  padding: 5rem 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  footer,
+  section {
+    padding: 5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  footer,
+  section {
+    padding: 10rem 15rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+.body {
+  flex: 1;
+}
+
+section.no-padding {
+  padding: 0;
+}
+
+section.about,
+section.lets-talk,
+section.positions,
+section.expertise {
+  background: #219ab5;
+  background-image: linear-gradient(145deg, #219ab5, #21b5ab);
+  color: white;
+}
+
+section.about a,
+section.lets-talk a,
+section.positions a,
+section.expertise a {
+  color: #212121;
+}
+
+section > h2,
+section > div > h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+}
+
+/* NAVBAR */
+
+.navigation {
+  background-color: #fff;
+  padding: 0;
+}
+
+.navbar-default {
+  min-height: 60px;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-brand {
+  line-height: 60px;
+  padding: 0 15px;
+}
+
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background: transparent;
+  border: none;
+  padding: 15px 10px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  transition: background .25s;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {
+  background: #219ab5;
+}
+
+.navbar-brand {
+  color: #219ab5 !important;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.navbar-default .navbar-nav > li > .active {
+  color: #219ab5;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-brand {
+    padding-left: 0;
+  }
+}
+
+/* JUMBOTRON */
+
+.jumbotron {
+  height: 60vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.jumbotron > div {
+  background-position: center;
+  background-size: cover;
+  bottom: 0;
+  filter: blur(50px);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1.15);
+  transition: filter 1s, transform 1s;
+}
+
+.jumbotron > div.loaded {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.jumbotron-home > div {
+  background-image: url(../images/omnyon_5k.jpg);
+}
+
+.jumbotron-events > div {
+  background-image: url(../images/omnyon_dinner.jpg);
+}
+
+.jumbotron-events > h1 {
+  background: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-weight: 300;
+  left: 0;
+  margin: 0;
+  padding: 5rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+/* PARTNERS */
+
+#partner h2 {
+  font-size: 30px;
+}
+
+.partners {
+  text-align: center;
+  user-select: none;
+}
+
+.partners ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.partners ul li {
+  display: inline-block;
+  height: 120px;
+  max-width: 250px;
+  min-width: 200px;
+  padding: 0 2rem;
+  position: relative;
+  vertical-align: middle;
+}
+
+.partners ul li img {
+  left: 50%;
+  padding: inherit;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*@media only screen and (min-width: 480px) {
+  .partners ul li {
+    height: 80px;
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .partners ul li {
+    height: 100px;
+    width: 20%;
+  }
+}*/
+
+.partners img {
+  filter: grayscale(100%);
+}
+
+/* ABOUT US */
+
+.our-team {
+  text-align: center;
+}
+
+.our-team img {
+  border-radius: 6px;
+  height: 200px;
+  margin-top: 30px;
+}
+
+/* VALUES */
+
+.values .value-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.values .value-container:first-of-type {
+  margin: 50px auto 0 auto;
+}
+
+.values .value-container:last-child p {
+  margin: 0;
+}
+
+.values .value-container .value {
+  color: #219ab5;
+}
+
+@media only screen and (max-width: 767px) {
+  .values .value-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .values .value-container:first-of-type {
+    margin: 0;
+  }
+}
+
+.values .value-container .value {
+  display: inline-block;
+  font-size: 15rem;
+  margin: 0 0 2rem 0;
+}
+
+.values .value-container p {
+  margin: 0 0 4rem 0;
+}
+
+/* LISTS */
+
+.benefits ul,
+.positions ul,
+.lets-talk ul,
+.upcoming-events ul {
+  margin: 0;
+  padding: 0;
+}
+
+.benefits ul li,
+.positions ul li,
+.lets-talk ul li,
+.upcoming-events ul li {
+  border-top: 1px solid #efefef;
+  list-style: none;
+}
+
+/* BENEFITS */
+
+.benefits ul {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.benefits li {
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.benefits div:last-child ul {
+  border-top: 1px solid #efefef;
+}
+
+.benefits div:last-child ul li:last-child {
+  padding: 1rem 0 0 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .benefits div:last-child ul {
+    border: none;
+  }
+
+  .benefits ul li {
+    padding: 2rem 0 2rem 0;
+  }
+
+  .benefits ul li:last-child {
+    padding: 2rem 0 0 0;
+  }
+
+  .benefits div:last-child ul li:last-child {
+    padding: 2rem 0 0 0;
+  }
+}
+
+.benefits li:first-child {
+  border-top: none;
+}
+
+/* POSITIONS */
+
+.positions h2 {
+  text-align: center;
+}
+
+.positions p {
+  text-align: center;
+}
+
+.positions ul {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.positions li {
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.positions li:first-child {
+  border-top: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .positions li {
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+/* REFERRALS */
+
+.referrals table,
+.referrals table th,
+.referrals table td {
+  border: 1px solid #ddd;
+}
+
+.referrals table th,
+.referrals table td {
+  padding: 1rem;
+}
+
+.referrals table td {
+  text-align: right;
+}
+
+.referrals table th {
+  text-align: center;
+}
+
+.referrals table {
+  margin: auto;
+  width: 100%;
+}
+
+.referrals h3 {
+  width: 484px;
+  margin: 2rem auto 0 auto;
+}
+
+/* LETS TALK */
+
+.lets-talk ul {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.lets-talk li {
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.lets-talk li:first-child {
+  border: none;
+}
+
+/* TECHNOLOGIES */
+
+.technologies {
+  text-align: center;
+}
+
+.technologies input {
+  border: none;
+  border-bottom: 1px solid #212121;
+  color: #212121;
+  outline: none;
+}
+
+.technologies input:focus {
+  border-color: #219ab5;
+}
+
+.technologies .results {
+  display: none;
+}
+
+.technologies .results p {
+  display: inline-block;
+  margin: 0;
+  padding: 2rem 2rem 0 2rem;
+}
+
+/* EXPERTISE */
+
+.expertise p {
+  text-align: center;
+  margin: 0 0 5rem;
+}
+
+.expertise div:last-child p {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .expertise p {
+    text-align: center;
+    margin: 0 0 10rem;
+  }
+
+  .expertise div:nth-child(n + 3) p {
+    margin-bottom: 0;
+  }
+}
+
+/* EVENTS */
+
+.upcoming-events ul {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.upcoming-events li {
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.upcoming-events li:first-child {
+  border-top: none;
+}
+
+/* FOOTER */
+
+footer {
+  background: #212121;
+}
+
+footer h2,
+footer p {
+  color: #909090;
+  text-align: center;
+}
+
+footer p:last-of-type {
+  margin: 0;
+}
+
+footer .social-networks {
+  font-size: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+footer .social-network {
+  display: inline-block;
+  font-size: 3rem;
+  margin: 0 0 0 2rem;
+  position: relative;
+}
+
+footer .social-networks .social-network:first-of-type {
+  margin: 0;
+}

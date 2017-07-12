@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#219ab5">
+  <title>Omnyon</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="css/animate.css"> -->
+  <!-- <link href="css/prettyPhoto.css" rel="stylesheet"> -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="index.html"><img src="images/omnyonlogoofficial.png" class="navbar-brand img-responsive" alt="Omnyon"/></a> -->
+            <a href="/" class="navbar-brand">OMNYON</a>
+          </div>
+
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li role="presentation"><a href="/">Home</a></li>
+              <li role="presentation"><a href="/expertise">Expertise</a></li>
+              <li role="presentation"><a href="/events">Events</a></li>
+              <li role="presentation"><a href="/careers">Careers</a></li>
+              <li role="presentation"><a href="/contact" class="active">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="body">
+    <section class="our-team clearfix">
+      <h2>Our Team</h2>
+      <div class="col-md-4">
+        <img src="images/team/tim.jpg" alt="Tim, Owner">
+        <h4>Tim | Owner</h4>
+        <p>Loves problem-solving with a focus on customer mission success. Prides himself on his intimate understanding of the customer domain. Emphasizes understanding customer needs from start to finish.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img src="images/team/marci.jpg" alt="Marci, Staffing">
+        <h4>Marci | Staffing</h4>
+        <p>Constantly balancing multiple roles to ensure that the satisfaction of our current and potential employees. Excellent communicator that places emphasis on building relationships with employees.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="images/team/taylor.jpg" alt="Taylor, Operations">
+        <h4>Taylor | Operations</h4>
+        <p>Dedicated to improving processes and policies. Supervises financial management and planning while ensuring the efficiency of our human resources department and being responsive to all employees.</p>
+      </div>
+    </section>
+
+    <section class="lets-talk">
+      <h2>Let's Talk</h2>
+      <ul>
+        <li>Phone: <a href="tel:4433517604">443.351.7604</a></li>
+        <li>Staffing: <a href="mailto:staffing@omnyon.com">staffing@omnyon</a></li>
+        <li>HR: <a href="mailto:hr@omnyon.com">hr@omnyon</a></li>
+        <li>Contracts: <a href="mailto:contracts@omnyon.com">contacts@omnyon</a></li>
+        <li>Business Development: <a href="mailto:bd@omnyon.com">bd@omnyon</a></li>
+        <li>General: <a href="mailto:info@omnyon.com">info@omnyon</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer">
+      <h2>Like what you see?</h2>
+      <p>Then get a hold of us. We would love to hear from you.</p>
+      <p class="social-networks">
+        <a class="social-network" href="https://www.facebook.com/Omnyon/"><i class="ion-social-facebook"></i></a>
+        <a class="social-network" href="https://www.linkedin.com/groups/7064153"><i class="ion-social-linkedin"></i></a>
+      </p>
+      <p><a href="tel:4433517604">443.351.7604</a></p>
+      <p><a href="mailto:info@omnyon.com">info@omnyon</a></p>
+    </div>
+  </footer>
+
+  <!-- offline -->
+  <script>
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js', { scope: '/' })
+    .then(function(registration) {
+      console.log('Service Worker Registered')
+    })
+  navigator.serviceWorker.ready.then(function(registration) {
+    console.log('Service Worker Ready')
+  })
+}
+</script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous">
+  </script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
