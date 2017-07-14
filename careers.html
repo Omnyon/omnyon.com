@@ -55,7 +55,7 @@
       <div class="col-md-6">
         <ul>
           <li>3% gift, 6% match, immediate vesting 401k (after 90 days)</li>
-          <li>2% guarenteed annual bonus</li>
+          <li>2% guaranteed annual bonus</li>
           <li>~$3,000 Health Care Credit Card</li>
           <li>Dental, Medical and Life Insurance</li>
           <li>Short Term/Long Term Disability</li>
@@ -64,8 +64,8 @@
       <div class="col-md-6">
         <ul>
           <li>Accidental Death and Dismemberment Insurance</li>
-          <li>Flexible Paid Time Off (25 days standard and re-adjustable)</li>
-          <li>Company Paid Traning/Education</li>
+          <li>Flexible Paid Time Off (25 days standard and adjustable)</li>
+          <li>Company Paid Training/Education</li>
           <li>Hourly pay for all billable hours (e.g. overtime)</li>
           <li>Dependent Day Care Expense Pre-Tax Plan</li>
         </ul>
@@ -84,7 +84,7 @@
       </div>
       <div class="col-md-6">
         <h2>Locations</h2>
-        <p>We have positions in many location, including, but not limited to, the following:</p>
+        <p>We have positions in many locations, including, but not limited to, the following:</p>
         <ul>
           <li>Ft. Meade / Columbia / College Park / Hanover MD</li>
           <li>McLean / Tyson's Corner / Reston / Herndon / Chantilly / Springfield, VA</li>
@@ -147,16 +147,17 @@
 
   <!-- offline -->
   <script>
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js', { scope: '/' })
-        .then(function (registration) {
-              console.log('Service Worker Registered');
-        });
-      navigator.serviceWorker.ready.then(function (registration) {
-         console.log('Service Worker Ready');
-      });
-    }
-  </script>
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js', { scope: '/' })
+    .then(function(registration) {
+      console.log('Service Worker Registered')
+    })
+  navigator.serviceWorker.ready.then(function(registration) {
+    console.log('Service Worker Ready')
+  })
+}
+</script>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script
