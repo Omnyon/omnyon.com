@@ -38,9 +38,19 @@ a {
   color: #219ab5;
 }
 
+a:focus {
+  text-decoration: none;
+}
+
 a:hover {
   text-decoration: none;
   color: #21b5ab;
+}
+
+.body a,
+footer a {
+  border-bottom: 1px solid;
+  border-color: inherit;
 }
 
 ::selection {
@@ -101,7 +111,7 @@ section.about a,
 section.lets-talk a,
 section.positions a,
 section.expertise a {
-  color: #212121;
+  color: white;
 }
 
 section > h2,
@@ -128,6 +138,7 @@ section > div > h2 {
 
 .navbar-default .navbar-nav > li > a,
 .navbar-brand {
+  color: #212121;
   line-height: 60px;
   padding: 0 15px;
 }
@@ -545,6 +556,7 @@ footer .social-networks {
 }
 
 footer .social-network {
+  border: none;
   display: inline-block;
   font-size: 3rem;
   margin: 0 0 0 2rem;
