@@ -345,7 +345,7 @@ section > div > h2 {
 .positions ul li,
 .lets-talk ul li,
 .upcoming-events ul li {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid #eeeeee;
   list-style: none;
 }
 
@@ -362,7 +362,7 @@ section > div > h2 {
 }
 
 .benefits div:last-child ul {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid #eeeeee;
 }
 
 .benefits div:last-child ul li:last-child {
@@ -406,12 +406,13 @@ section > div > h2 {
   max-width: 400px;
 }
 
-.positions li {
+.positions ul li {
+  border-top: 1px solid #21b5ab;
   padding: 1rem 0 1rem 0;
   text-align: center;
 }
 
-.positions li:first-child {
+.positions ul li:first-child {
   border-top: none;
 }
 
@@ -459,12 +460,13 @@ section > div > h2 {
   width: 50%;
 }
 
-.lets-talk li {
+.lets-talk ul li {
+  border-top: 1px solid #21b5ab;
   padding: 1rem 0 1rem 0;
   text-align: center;
 }
 
-.lets-talk li:first-child {
+.lets-talk ul li:first-child {
   border: none;
 }
 
