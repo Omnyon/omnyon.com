@@ -1,4 +1,4 @@
-var version = 0.7
+var version = 0.8
 var CACHE_PREFIX = 'omnyon_'
 
 self.addEventListener('install', function(e) {
