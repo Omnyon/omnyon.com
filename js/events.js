@@ -19,6 +19,10 @@ function displayEvents() {
         events.push(event);
       });
 
+      if (events.length <= 0) {
+        document.querySelector('.loader').classList.remove('loader');
+      }
+
       // Sort events by date, earliest event at top.
       events = _.orderBy(events, ['date'], ['asc']);
 
