@@ -18,6 +18,18 @@
   <script src="js/html5shiv.min.js"></script>
   <script src="js/respond.min.js"></script>
   <![endif]-->
+
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-firestore.js"></script>
+
+  <!-- firebase ui-->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  
+  <!-- Initialize firebase authentication, database, & ui-->
+  <script src="js/firebaseInit.js"></script>
 </head>
 <body>
   <header>
@@ -31,23 +43,29 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- <a href="index.html"><img src="images/omnyonlogoofficial.png" class="navbar-brand img-responsive" alt="Omnyon"/></a> -->
-            <a href="/" class="navbar-brand">OMNYON</a>
+            <a href="index.html"><img src="images/omnyonlogoofficial.png" class="navbar-brand img-responsive" alt="Omnyon"/></a>
           </div>
 
           <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" id="top-navigation">
               <li role="presentation"><a href="/">Home</a></li>
               <li role="presentation"><a href="/expertise">Expertise</a></li>
               <li role="presentation"><a href="/events">Events</a></li>
               <li role="presentation"><a href="/careers" class="active">Careers</a></li>
               <li role="presentation"><a href="/contact">Contact</a></li>
+              <li role="presentation" id="authorization" class="navbar-hidden-item reveal">
+                  <a href="" id="sign-in-link" >Sign In</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </nav>
   </header>
+
+  <div class="sign-in">
+      <div id="firebaseui-auth-container"></div>
+  </div>
 
   <div class="body">
     <section class="benefits clearfix">
@@ -96,13 +114,13 @@
     <section class="referrals">
       <h2>Referral Bonuses</h2>
       <table>
-        <caption>Non-Employee - Bonus / Employee - Salary Increase</caption>
+        <caption>Non-Employee - Bonus* / Employee - Salary Increase</caption>
         <tbody>
           <tr>
             <th>Years of Exp.</th>
-            <th>Engineer</th>
-            <th>Admin</th>
-            <th>Non-Tech</th>
+            <th>Software Engineer</th>
+            <th>Administrator/System Engineer</th>
+            <th>Technician/Information Technology Engineer</th>
           </tr>
           <tr>
             <td>0-5</td>
@@ -130,6 +148,7 @@
           </tr>
         </tbody>
       </table>
+      <p>*50% @ 90 days & 50% @ 180 days</p>
     </section>
   </div>
 

@@ -169,11 +169,37 @@ section > div > h2 {
   color: #219ab5;
 }
 
+.navbar-hidden-item {
+  opacity: 0;
+  max-width: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 700ms ease-in-out;
+}
+
+.navbar-hidden-item.reveal {
+  max-width: 800px; 
+  max-height: 50px;
+  opacity: 1;
+}
+
 @media only screen and (min-width: 768px) {
   .navbar-brand {
     padding-left: 0;
   }
 }
+
+/* Sign In */
+@media only screen and (min-width: 768px) {
+  .sign-in {
+    min-width: 200px;
+    margin-top: 10px;
+    margin-left: calc(100vw - 300px);
+    z-index: 1050;
+    position: fixed;
+  }
+}
+
 
 /* JUMBOTRON */
 
@@ -533,6 +559,101 @@ section > div > h2 {
 
 .upcoming-events li:first-child {
   border-top: none;
+}
+
+.event-alert {
+  opacity: 0;
+  position: fixed;
+  width: 400px;
+  bottom: 0px;
+  right: 0px;
+  transition: opacity 500ms ease-in-out;
+}
+
+.hidden-event {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0px;
+  max-width: 0px;
+  transition: all 700ms ease-in-out;
+}
+
+.hidden-event.reveal {
+  opacity: 1;
+  max-height: none;
+  max-width: none;
+}
+
+.event-alert.alert-active {
+  opacity: 1;
+}
+
+.event-header {
+  /*background-color: #219ab5;*/
+  width: 100%;
+}
+
+.event-header h1, h2 {
+  color: white;
+}
+
+.event-item {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .event-form-container {
+    margin-top: 50px;
+  }
+  .events-container {
+    padding: 15px;
+    max-width: 600px;
+
+  }
+
+  .event-form {
+    width: 600px;
+  }
+
+  .event-header {
+    background-image: url(../images/social_event_board.jpg);
+    background-size: 100vw 600px; 
+    width: 100%;
+    height: 200px;
+    
+  }
+}
+
+/* LOADER */
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #219ab5; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* FOOTER */
